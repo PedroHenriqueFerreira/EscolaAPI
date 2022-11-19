@@ -2,14 +2,25 @@
 ![Badge concluído](http://img.shields.io/static/v1?label=STATUS&message=CONCLUÍDO&color=GREEN&style=for-the-badge)
 
 ## Descrição do repositório
-Este projeto é uma API de escola que contém um sistema de autenticação de usuário, além da criação de salas de conversa para troca de mensagens em tempo real. 
+Este projeto é uma API de escola que contém um sistema de autenticação de usuário, cada usuário cadastra alunos com vários dados e uma foto de perfil
 
 ## Primeiros passos
 
-Primeiramente é necessário ter o `NodeJS` em sua máquina e um banco em `MongoDB`.
+Primeiramente é necessário ter o `NodeJS` e o `MySQL` em sua máquina.
 
 ## Variáveis de ambiente
-Crie um arquivo `.env` e adicione as variáveis de ambiente presentes no `.env_example`.
+Crie um arquivo `.env` e substitua as seguintes variáveis que contém **XXXXXXXX**
+
+```env
+PORT=3001
+DATABASE_HOST=localhost
+DATABASE=school
+DATABASE_PORT=3306
+DATABASE_USERNAME=XXXXXXXX
+DATABASE_PASSWORD=XXXXXXXX
+TOKEN_SECRET=XXXXXXXX
+TOKEN_EXPIRATION=7d
+```
 
 ## Instalação de dependências
 
@@ -17,10 +28,16 @@ Crie um arquivo `.env` e adicione as variáveis de ambiente presentes no `.env_e
 $ npm install
 ```
 
+## Preparação do banco de dados
+
+```
+$ npx sequelize db:migrate
+```
+
 ## Execução
 
 ```
-$ npm start
+$ npm run dev
 ```
 
 ## Tecnologias utilizadas
